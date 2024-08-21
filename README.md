@@ -1,7 +1,8 @@
-```markdown
+
 # Conway's Game of Life
 
-Runs Conway's Game of Life. The program takes 2 integers x and y from standard input, followed by a mapping of an initial seed (with x times y 0/1 values). 
+Runs Conway's Game of Life. The program takes 2 integers x and y from standard input, 
+followed by a mapping of an initial seed (with x times y 0/1 values). 
 
 
 ## Features
@@ -10,9 +11,9 @@ Command Line arguments:
 - "-graphics" enables an Xming window display
 
 Run-time commands:
-- 		  'p' : prints the game board
-- 't [int n]' : moves the game forwards 1 (or n, if specified) tick(s)
-- 		  's' : runs the game forever (warning: can't be stopped)
+-         'p' : print board
+- 't [int n]' : tick n (default 1)
+-         'q' : quit program
 
 
 ## Installation
@@ -53,5 +54,4 @@ See *.in files for more examples. Alternatively, use runSuite on suite.txt.
 
 
 ## Screenshots
-![101 pattern](http://url/image.png)
-![Gosper glider gun]()
+![Gosper glider gun](https://github.com/e4chou/ConwaysGameofLife/blob/main/Screenshot%202024-08-21%20115838.png?raw=true)
