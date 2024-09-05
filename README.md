@@ -11,9 +11,9 @@ Command Line arguments:
 - "-graphics" enables an Xming window display
 
 Run-time commands:
--         'p' : print board
+- 'p' : print board
 - 't [int n]' : tick n (default 1)
--         'q' : quit program
+- 'q' : quit program
 
 
 ## Installation

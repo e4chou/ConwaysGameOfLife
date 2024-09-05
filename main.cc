@@ -24,10 +24,10 @@ int main(int argc, char* argv[]) {
 
     Board canvas = Board(x, y, seed);
 
-	vector<Observer*> observers;
-    observers.emplace_back(new Text(&canvas));
+    vector<Observer*> observers;
+    observers.emplace_back(new Text(canvas));
     if ((argc > 1) && (string(argv[1]) == "-graphics")) {
-        observers.emplace_back(new Graphics(&canvas));
+        observers.emplace_back(new Graphics(canvas));
     }
 
     char cmd;
@@ -43,19 +43,20 @@ int main(int argc, char* argv[]) {
             iss >> n;
             for (int i = 0; i < n; ++i) {
                 canvas.tick();
-				sleep(1);
             }
         }
-        if (cmd == 's') {
-            // dangerous, only stops on CTRL + C
-            while (true) {
-                canvas.tick();
-                sleep(1);
-            }
+        // if (cmd == 's') {  // bad
+        //     while (true) {
+        //         canvas.tick();
+        //         sleep(1);
+        //     }
+        // }
+        if (cmd == 'q') {
+            break;
         }
     }
 
-	for (auto obs:observers) {
-		delete obs;
-	}
+    for (auto obs:observers) {
+        delete obs;
+    }
 }

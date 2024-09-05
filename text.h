@@ -3,11 +3,11 @@
 #include "board.h"
 
 class Text : public Observer {
-    Board *b;
+    Board &b;
 
    public:
-    ~Text();
-    Text(Board *b);
+    ~Text() = default;
+    Text(Board &b);
     void notify() override;
 };
 

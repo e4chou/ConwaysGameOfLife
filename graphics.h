@@ -5,13 +5,13 @@
 #include "window.h"
 
 class Graphics : public Observer {
-    Board* b;
-    Xwindow* window;
-    void draw() const;
+    Board& b;
+    Xwindow window;
+    void draw();
 
    public:
     ~Graphics();
-    Graphics(Board* b);
+    Graphics(Board& b);
     void notify() override;
 };
 

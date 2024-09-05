@@ -1,15 +1,15 @@
 #ifndef TICK_H
 #define TICK_H
-#include "cell_subject.h"
+#include "subject.h"
 
-class Tick : public CellSubject {
+class Tick : public Subject {
     mutable int time;
    public:
     Tick();
-	Tick(int time);
-	~Tick();
-	int getTick() const;
-	virtual void notifyObservers() const override;
+    Tick(int time);
+    ~Tick() = default;
+    int getTick() const;
+    virtual void notifyObservers() const override;
 };
 
 #endif
