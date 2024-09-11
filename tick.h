@@ -2,7 +2,9 @@
 #define TICK_H
 #include "subject.h"
 
-class Tick : public Subject {
+class Cell;
+
+class Tick : public Subject<Cell> {
     mutable int time;
    public:
     Tick();

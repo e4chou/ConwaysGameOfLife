@@ -6,7 +6,7 @@
 #include "subject.h"
 #include "tick.h"
 
-class Board : public Subject {
+class Board : public Subject<Observer> {
     std::vector<Cell> cells;
     int length, height;
     Tick t;

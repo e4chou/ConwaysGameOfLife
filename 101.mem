@@ -1,14 +1,14 @@
-==115279== Memcheck, a memory error detector
-==115279== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==115279== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==115279== Command: ./conway
-==115279== 
-==115279== 
-==115279== HEAP SUMMARY:
-==115279==     in use at exit: 0 bytes in 0 blocks
-==115279==   total heap usage: 31 allocs, 31 frees, 127,128 bytes allocated
-==115279== 
-==115279== All heap blocks were freed -- no leaks are possible
-==115279== 
-==115279== For lists of detected and suppressed errors, rerun with: -s
-==115279== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==68127== Memcheck, a memory error detector
+==68127== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==68127== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==68127== Command: ./conway
+==68127== 
+==68127== 
+==68127== HEAP SUMMARY:
+==68127==     in use at exit: 0 bytes in 0 blocks
+==68127==   total heap usage: 31 allocs, 31 frees, 127,128 bytes allocated
+==68127== 
+==68127== All heap blocks were freed -- no leaks are possible
+==68127== 
+==68127== For lists of detected and suppressed errors, rerun with: -s
+==68127== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

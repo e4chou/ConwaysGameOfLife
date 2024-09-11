@@ -9,7 +9,9 @@ Cell::Cell(int x, int y, bool status, Board* b)
     : x{x}, y{y}, live_neighbors{0}, status{status}, changed{false}, b{b} {
         if (status == ALIVE) changed = true;
     }
-Cell::~Cell() { b->detach(this); }
+Cell::~Cell() {}  // I don't detach cell from tick or its neighbors;
+                  // but the cells shouldn't leave their board, and there is a composite
+                  // relationship between board, cells, and tick, so detaching doesn't matter
 
 int Cell::getX() const { return x; }
 int Cell::getY() const { return y; }
