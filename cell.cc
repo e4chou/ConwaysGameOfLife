@@ -1,17 +1,14 @@
 #include "cell.h"
-
 #include "board.h"
-
-const bool ALIVE = true;
-const bool DEAD = false;
 
 Cell::Cell(int x, int y, bool status, Board* b)
     : x{x}, y{y}, live_neighbors{0}, status{status}, changed{false}, b{b} {
-        if (status == ALIVE) changed = true;
-    }
+    if (status == ALIVE) changed = true;
+}
+
 Cell::~Cell() {}  // I don't detach cell from tick or its neighbors;
-                  // but the cells shouldn't leave their board, and there is a composite
-                  // relationship between board, cells, and tick, so detaching doesn't matter
+                  // but there is a composite relationship between board, cells, and tick,
+                  //  so detaching shouldn't matter as they are destroyed simultaneously
 
 int Cell::getX() const { return x; }
 int Cell::getY() const { return y; }
@@ -22,13 +19,9 @@ void Cell::plusLiveNeighbor() { ++live_neighbors; }
 
 void Cell::notify() {
     if (status == DEAD) return;
-    else if (status == ALIVE) {
-        for (int i = -1; i < 2; ++i) {
-            for (int j = -1; j < 2; ++j) {
-                if (!((i == 0) && (j == 0))) {
-                    b->plusLiveNeighbor(x + i, y + j);
-                }
-            }
+    if (status == ALIVE) {
+        for (Cell* o:observers) {
+            o->plusLiveNeighbor();
         }
     }
 }

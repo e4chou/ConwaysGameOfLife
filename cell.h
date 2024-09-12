@@ -1,13 +1,14 @@
 #ifndef CELL_H
 #define CELL_H
 #include "observer.h"
+#include "subject.h"
 
-extern const bool ALIVE;
-extern const bool DEAD;
+constexpr bool ALIVE = true;
+constexpr bool DEAD = false;
 
 class Board;
 
-class Cell : public Observer {
+class Cell : public Observer, public Subject<Cell> {
     int x, y, live_neighbors;
     bool status, changed;	// has the cell changed status last tick?
     Board* b;
